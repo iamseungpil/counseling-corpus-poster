@@ -92,7 +92,7 @@
 % Heading
 \newcommand\heading[1]
 {%
-  \par\bigskip
+  \par\medskip
   {\usebeamerfont{heading}\usebeamercolor[fg]{heading}#1}\par\smallskip
 }
 
@@ -249,15 +249,15 @@
   \ifdefined\insertfootercontent
   \begin{beamercolorbox}[vmode]{headline}
     \ifbeamercolorempty[bg]{headline rule}{}{
-      \begin{beamercolorbox}[wd=\paperwidth,colsep=0.25ex]{headline rule}\end{beamercolorbox}
+      \begin{beamercolorbox}[wd=\paperwidth,colsep=0.12ex]{headline rule}\end{beamercolorbox}
     }
-    \vspace{1.5ex}
+    \vspace{0.15ex}
     \hspace{\sepwidth}
     \usebeamerfont{footline}
     \centering
     \insertfootercontent
     \hspace{\sepwidth}
-    \vspace{1.5ex}
+    \vspace{0.15ex}
   \end{beamercolorbox}
   \else\fi
 }
