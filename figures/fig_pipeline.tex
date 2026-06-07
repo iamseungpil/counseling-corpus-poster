@@ -1,7 +1,7 @@
 % 4-layer refinement pipeline (vertical flow), matching the v2_short method.
 \begin{figure}[h]
 \centering
-\begin{tikzpicture}[node distance=1.9cm]
+\begin{tikzpicture}[node distance=1.7cm]
   \node (l1) [pipe]            {\textbf{① 사전 오염 제거}\\[0.3ex]\small 광고$\cdot$기관 홍보$\cdot$봇$\cdot$비심리 상담(법률$\cdot$입시$\cdot$성형) 제거};
   \node (l2) [pipe, below=of l1] {\textbf{② 규칙 기반 1차 분류}\\[0.3ex]\small 자기/가족 주어 $+$ 상담 동사 $+$ 정신건강 어휘 $\rightarrow$ 유지/제외/검토};
   \node (l3) [pipehi, below=of l2] {\textbf{③ LLM 판정}\\[0.3ex]\small 검토 사례의 실제 경험 여부$\cdot$시점$\cdot$장면$\cdot$평가 방향$\cdot$신뢰도 산출};
