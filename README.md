@@ -23,8 +23,15 @@ figures/
   process_contrast.pdf
 tables/
   table_compare.tex         # 면접 자료 vs SNS 자료 비교 표
-logos/GIST_logo.jpg
+logos/
+  snu_emblem.png            # 서울대학교 엠블럼 (좌측, 배경 투명)
+  kca_logo.png              # 한국상담학회 로고 (우측, 배경 투명)
 ```
+
+저자: Yunjeong Lee (서울대학교) · 발표: 한국상담학회 학술대회 (2026).
+로고는 [서울대 공식 심볼](https://en.snu.ac.kr/about/symbol/ui)과
+[한국상담학회](https://www.counselors.or.kr/)의 공개 이미지를 받아 배경을
+투명 처리해 사용했습니다.
 
 원본 그림 3종(`corpus_funnel`, `corpus_overview`, `process_contrast`)은
 [counseling-corpus](https://github.com/iamseungpil/counseling-corpus)의

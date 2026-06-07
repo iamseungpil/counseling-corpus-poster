@@ -13,6 +13,11 @@
 \usepackage[orientation=portrait,size=a0,scale=1.0]{beamerposter}
 \usetheme{gemini}
 \usecolortheme{nott}
+
+% Gray header/footer so the SNU (navy) and KCA (red) logos read clearly.
+\definecolor{headergray}{RGB}{214,216,218}
+\setbeamercolor{headline}{fg=nottblue,bg=headergray}
+\setbeamercolor{footline}{fg=nottblue,bg=headergray}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{tabularx}
@@ -55,26 +60,27 @@
 % Title
 % ====================
 
-\title{한국어 공개 SNS에 기록된 상담 경험의 기술적 특징\\
+\title{한국어 공개 SNS에 기록된\\ 상담 경험의 기술적 특징\\
 \large LLM 보조 정제 절차로 분석한 사례 보고}
 
-\author{\textbf{이윤정}}
+\author{\textbf{Yunjeong Lee}}
 
-\institute[shortinst]{광주과학기술원 (GIST)}
+\institute[shortinst]{서울대학교 (Seoul National University)}
 
 % ====================
 % Footer
 % ====================
 
 \footercontent{
-  \textbf{한국상담심리학회 학술발표 포스터 (2026)} \hfill
+  \textbf{한국상담학회 학술대회 포스터 (2026)} \hfill
   \href{https://github.com/iamseungpil/counseling-corpus}{\textbf{github.com/iamseungpil/counseling-corpus}}}
 
 % ====================
 % Logo
 % ====================
 
-\logoleft{\includegraphics[height=7cm]{logos/GIST_logo.jpg}}
+\logoleft{\includegraphics[height=6.5cm]{logos/snu_emblem.png}}
+\logoright{\includegraphics[height=3cm]{logos/kca_logo.png}}
 
 % ====================
 % Body
