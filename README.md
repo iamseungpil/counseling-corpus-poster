@@ -5,7 +5,8 @@
 
 [Seungpil_graduation_poster](https://github.com/iamseungpil/Seungpil_graduation_poster)의
 gemini 포스터 양식(Anish Athalye, Unofficial University of Cambridge Poster Template)을
-따르며, 한국어 렌더링을 위해 폰트를 Apple SD Gothic Neo로 교체했습니다.
+따르며, 한국어 렌더링을 위해 폰트를 Noto Sans KR(SIL OFL)로 교체해 `fonts/`에 동봉했습니다.
+시스템 폰트에 의존하지 않으므로 macOS · Overleaf · Linux에서 동일하게 빌드됩니다.
 
 ## 구성
 
@@ -26,6 +27,11 @@ tables/
 logos/
   snu_emblem.png            # 서울대학교 엠블럼 (좌측, 배경 투명)
   kca_logo.png              # 한국상담학회 로고 (우측, 배경 투명)
+  author_qr.png             # 저자 소개 페이지 QR (julyjlee.github.io/about.html)
+fonts/
+  NotoSansKR-Regular.otf    # 본문 폰트 (SIL OFL, 동봉)
+  NotoSansKR-Bold.otf       # 볼드 폰트 (SIL OFL, 동봉)
+  OFL.txt                   # 폰트 라이선스
 ```
 
 저자: Yunjeong Lee (서울대학교) · 발표: 한국상담학회 학술대회 (2026).
@@ -39,7 +45,8 @@ logos/
 
 ## 빌드
 
-XeLaTeX와 Apple SD Gothic Neo(macOS 기본 탑재) 폰트가 필요합니다.
+XeLaTeX만 있으면 됩니다. 한국어 폰트(Noto Sans KR)는 `fonts/`에 동봉되어
+경로로 로드되므로 별도 설치가 필요 없습니다.
 
 ```bash
 make            # latexmk -pdfxe 로 poster.pdf 생성

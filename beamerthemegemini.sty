@@ -15,15 +15,21 @@
 % Fonts
 % ====================
 
-% Korean-capable fonts (Apple SD Gothic Neo) replace Lato/Raleway so the
-% poster renders Korean natively under XeLaTeX/LuaLaTeX.
-\newfontfamily\Raleway[Ligatures=TeX,BoldFont={Apple SD Gothic Neo Bold}]{Apple SD Gothic Neo}
-\newfontfamily\Lato[Ligatures=TeX,BoldFont={Apple SD Gothic Neo Bold}]{Apple SD Gothic Neo}
+% Korean-capable fonts replace Lato/Raleway so the poster renders Korean
+% natively under XeLaTeX/LuaLaTeX. Noto Sans KR (SIL OFL) is bundled in
+% fonts/ and loaded by path, so the poster builds identically on macOS,
+% Overleaf, and Linux CI without depending on any system-installed font.
+\newfontfamily\Raleway[Path=fonts/,Ligatures=TeX,
+  UprightFont=NotoSansKR-Regular.otf,BoldFont=NotoSansKR-Bold.otf]{NotoSansKR}
+\newfontfamily\Lato[Path=fonts/,Ligatures=TeX,
+  UprightFont=NotoSansKR-Regular.otf,BoldFont=NotoSansKR-Bold.otf]{NotoSansKR}
 
 \usefonttheme{professionalfonts}
 
-\setmainfont{Apple SD Gothic Neo}[BoldFont={Apple SD Gothic Neo Bold}]
-\setsansfont{Apple SD Gothic Neo}[BoldFont={Apple SD Gothic Neo Bold}]
+\setmainfont{NotoSansKR}[Path=fonts/,
+  UprightFont=NotoSansKR-Regular.otf,BoldFont=NotoSansKR-Bold.otf]
+\setsansfont{NotoSansKR}[Path=fonts/,
+  UprightFont=NotoSansKR-Regular.otf,BoldFont=NotoSansKR-Bold.otf]
 
 \setbeamerfont{headline}{family=\Raleway}
 \setbeamerfont{headline title}{size=\fontsize{60pt}{24pt}\selectfont,series=\bfseries}

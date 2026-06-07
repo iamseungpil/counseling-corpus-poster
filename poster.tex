@@ -80,7 +80,16 @@
 % ====================
 
 \logoleft{\includegraphics[height=6.5cm]{logos/snu_emblem.png}}
-\logoright{\includegraphics[height=3cm]{logos/kca_logo.png}}
+% Right side: smaller 한국상담학회 logo + QR to the author page.
+\logoright{%
+  \raisebox{-0.5\height}{\includegraphics[height=2cm]{logos/kca_logo.png}}%
+  \hspace{4ex}%
+  \raisebox{-0.5\height}{%
+    \begin{tabular}{@{}c@{}}
+      \includegraphics[height=2.6cm]{logos/author_qr.png}\\[0.6ex]
+      {\footnotesize 저자 소개}
+    \end{tabular}}%
+}
 
 % ====================
 % Body
