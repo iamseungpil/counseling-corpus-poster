@@ -11,7 +11,7 @@
 \usetikzlibrary{shapes.geometric,arrows.meta,positioning}
 \usepackage[absolute,overlay]{textpos}
 \usepackage{eso-pic}
-\usepackage{xcolor}
+\usepackage[table]{xcolor}
 \usepackage{ragged2e}
 \usepackage{booktabs}
 \usepackage{tabularx}
@@ -64,13 +64,13 @@
 % ===================== LEFT COLUMN =====================
 % I. 서론 > 1. 연구의 필요성
 \begin{textblock}{345}(50,250)
-  \fontsize{28}{37}\selectfont\justifying
+  \fontsize{31}{42}\selectfont\justifying
   상담 경험 연구는 부정 경험을 충분히 담아내지 못해 왔다. 그 누락은 부정 경험을 가진 사람이 면접 표본에 들어오지 않는 \textbf{모집단 차원}보다, 같은 사람이라도 면접 환경에서는 그 경험을 보고하지 않는 \textbf{보고 환경 차원}에서 강하게 일어난다(Mohr, 1995; Krumpal, 2013; 문보경$\cdot$장성숙, 2001). 부정 경험을 가진 내담자일수록 추적 면접에 잘 응하지 않고, 대면 맥락에서는 사회적 바람직성 편향이 작용하기 때문이다. 면접의 한계가 보고 환경에서 비롯된 것이라면, 환경을 바꿀 때 같은 경험이 다른 형태로 기록될 수 있다. 익명을 전제로 자기 경험을 적는 SNS 글이 그 사례다. Steinbrenner 외(2025)는 독일어권 온라인 포럼에서 부정적 심리치료 경험의 주제 구조를 추출해, 공개 텍스트가 분포 수준의 자료원이 됨을 보였다. 그러나 한국어 회고 표현과 상담 문화의 특수성 때문에 영어$\cdot$독일어권 결과를 그대로 옮기기 어렵고, 한국어 자료를 직접 분석한 연구는 아직 드물다.
 \end{textblock}
 
 % I. 서론 > 2. 연구목표
-\begin{textblock}{345}(52,455)
-  \fontsize{28}{40}\selectfont\justifying
+\begin{textblock}{345}(52,413)
+  \fontsize{27}{38}\selectfont\justifying
   \begin{itemize}
     \item \textbf{목적 1.} 한국어 공개 SNS 상담 경험 자료에 적용할 \textbf{LLM 보조 정제 절차}를 정리하고, 본문 코퍼스를 구성한다.
     \item \textbf{목적 2.} 본문 코퍼스의 \textbf{경험 극성과 사건 언어 양상}을 분포 수준에서 기술하고, 면접 기반 선행 연구와 비교한다.
@@ -78,18 +78,18 @@
 \end{textblock}
 
 % II. 이론적 배경
-\begin{textblock}{345}(50,565)
-  \fontsize{27}{36}\selectfont\justifying
+\begin{textblock}{345}(50,535)
+  \fontsize{30}{40}\selectfont\justifying
   본 연구의 분석 틀은 두 층으로 이루어진다. \textbf{이론 고정층}은 작업동맹이다. Bordin(1979)은 작업동맹을 유대$\cdot$과제$\cdot$목표 세 축의 협력으로 보았다. 유대는 상담자와 내담자의 정서적 결속, 과제는 회기에서 합의해 수행하는 활동, 목표는 함께 이루려는 변화를 가리킨다. 이 세 축은 짧은 회고문에서도 부정 경험과 긍정 경험을 다른 종류의 사건으로 구분하게 해 준다.
 
   \textbf{탐색 고정층}은 부정 경험 사건 언어에서 끌어왔다. Mohr(1995)는 부정적 성과를 식별 가능한 사건 단위로 분리해 보고할 것을 권고했고, 문보경$\cdot$장성숙(2001)은 내담자 불만을 ``원치 않는 반응'', ``상담자의 요구'', ``상처 경험'' 등으로 범주화했다. 본 연구는 이 사건 언어를 살려 여섯 과정 코드를 두었다. 부정 쪽은 강제성$\cdot$무시당함$\cdot$상처, 긍정 쪽은 이해받음$\cdot$안도$\cdot$성장이다. 각 코드는 글마다 등장 여부를 이진값으로 본다.
 \end{textblock}
 
 % III. 연구방법
-\begin{textblock}{345}(50,778)
-  \fontsize{26}{35}\selectfont\justifying
+\begin{textblock}{345}(50,750)
+  \fontsize{27}{36}\selectfont\justifying
   자료는 X 공개 한국어 글에서 모았다(사용자명$\cdot$외부 식별자 자동 비식별). 질의는 \textbf{정밀$\cdot$확장$\cdot$맥락 점검$\cdot$누적 확장}의 네 층으로 설계했고, 회수 게시물은 2010년 9월$\sim$2026년 4월(약 15년 7개월)에 걸쳐 있다.
-  \par\vspace{3mm}
+  \par\vspace{4mm}
   \begin{center}
   \begin{tikzpicture}[node distance=5mm]
     \node[pipe](a){\textbf{① 사전 오염 제거}\\[0.3ex]{\fontsize{17}{21}\selectfont 광고$\cdot$기관 홍보$\cdot$봇$\cdot$비심리 상담(법률$\cdot$입시$\cdot$성형) 제거}};
@@ -118,16 +118,17 @@
   부정 117건에서 관찰된 사건 표지를 문보경$\cdot$장성숙(2001)의 면접 범주와 나란히 놓았다. 면접 자료에서 사건 단위로 정리된 부정 경험의 표지가 익명 환경의 글에서도 적용 가능한 형태로 드러난다.
   \vspace{2mm}
 
-  {\fontsize{21}{27}\selectfont
-  \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.15\linewidth} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
-    \toprule
-    \textbf{측면} & \textbf{면접 자료 (문보경$\cdot$장성숙, 2001)} & \textbf{본 SNS 자료} \\
-    \midrule
-    자료원 & 내담자 면접$\cdot$개방형 질문지 & 한국어 공개 X 경험 글 \\
-    분석 단위 & 사례 단위 사건 회고 & 게시물 단위 경험 글 \\
-    부정 표지 & 원치 않는 반응, 해결책 부재, 상담자의 요구, 상처 경험 & 강제성 0.350, 무시당함 0.470, 상처 0.231 (부정 117건 기준) \\
-    분석 깊이 & 사례별 깊이 있는 합의 부호화 & 분포 수준의 탐색적 부호화 \\
-    \bottomrule
+  {\fontsize{22}{29}\selectfont
+  \setlength{\arrayrulewidth}{0.3pt}\arrayrulecolor{kcanavy!25}
+  \renewcommand{\arraystretch}{1.45}
+  \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.17\linewidth} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+    \rowcolor{kcanavy}
+    \textcolor{white}{\textbf{측면}} & \textcolor{white}{\textbf{면접 자료 (문보경$\cdot$장성숙, 2001)}} & \textcolor{white}{\textbf{본 SNS 자료}} \\
+    \rowcolor{kcanavy!8}\textbf{자료원} & 내담자 면접$\cdot$개방형 질문지 & 한국어 공개 X 경험 글 \\
+    \rowcolor{white}\textbf{분석 단위} & 사례 단위 사건 회고 & 게시물 단위 경험 글 \\
+    \rowcolor{kcanavy!8}\textbf{부정 표지} & 원치 않는 반응, 해결책 부재, 상담자의 요구, 상처 경험 & 강제성 0.350, 무시당함 0.470, 상처 0.231 (부정 117건 기준) \\
+    \rowcolor{white}\textbf{분석 깊이} & 사례별 깊이 있는 합의 부호화 & 분포 수준의 탐색적 부호화 \\
+    \arrayrulecolor{kcanavy!40}\bottomrule
   \end{tabularx}}
   \figcap{표 1. 면접 기반 선행 연구와 본 SNS 자료의 분포 비교.}
 
