@@ -101,14 +101,20 @@ iron2 = ("탐색 고정층은 부정 경험 사건 언어에서 끌어왔다. Mo
 "강제성·무시당함·상처, 긍정 쪽은 이해받음·안도·성장이다. 각 코드는 글마다 등장 여부를 이진값으로 본다.")
 sp = find("이론적 배경을 작성"); setbox(sp, 49, 688, 345, 192); fill_para(sp, [iron1, iron2], 24)
 
-bangbeop = ("자료는 X 공개 한국어 글에서 모았고, 사용자명과 외부 식별자는 수집 단계에서 자동으로 가렸다. "
-"질의는 정밀·확장·맥락 점검·누적 확장의 네 층으로 설계했으며, 회수된 게시물은 2010년 9월부터 2026년 4월까지 "
-"약 15년 7개월에 걸쳐 있다. 정제는 사전 오염 제거·규칙 분류·LLM 판정·보수적 확정의 네 층을 거쳐 원자료 "
-"3,652건을 관련성 유지본 479건, 엄격 확정본 451건, 본문 코퍼스 361건으로 좁혔다. 결과의 안정성은 "
-"부트스트랩 재표집과 상위 질의군을 하나씩 빼는 제외 점검으로 확인했다.")
-sp = find("연구방법에 대해 작성"); setbox(sp, 49, 936, 345, 92); fill_para(sp, [bangbeop], 23)
-# funnel figure under method text
-slide.shapes.add_picture(f"{FIG}/corpus_funnel.png", Mm(115), Mm(1030), width=Mm(205))
+bangbeop = ("자료는 X 공개 한국어 글에서 모았다(사용자명·외부 식별자 자동 비식별). 질의는 정밀·확장·맥락 점검·"
+"누적 확장의 네 층으로 설계했고, 회수 게시물은 2010년 9월~2026년 4월(약 15년 7개월)에 걸쳐 있다. 아래 "
+"LLM 보조 4층 정제 절차로 원자료를 좁혀 본문 코퍼스를 확정했다.")
+sp = find("연구방법에 대해 작성"); setbox(sp, 49, 932, 345, 62); fill_para(sp, [bangbeop], 22)
+# 4층 정제 절차 다이어그램(왼쪽) + 코퍼스 퍼널(오른쪽) 나란히
+slide.shapes.add_picture(f"{FIG}/pipeline.png", Mm(48), Mm(1000), width=Mm(167))
+slide.shapes.add_picture(f"{FIG}/corpus_funnel.png", Mm(223), Mm(1012), width=Mm(170))
+def caption(x, y, w, text):
+    tb = slide.shapes.add_textbox(Mm(x), Mm(y), Mm(w), Mm(14)); tb.text_frame.word_wrap = True
+    p = tb.text_frame.paragraphs[0]; r = p.add_run(); r.text = text
+    r.font.name = FONT; r.font.size = Pt(14); r.font.italic = True; r.font.color.rgb = TXT
+    return tb
+caption(48, 1100, 167, "그림 1. LLM 보조 4층 정제 절차.")
+caption(223, 1108, 170, "그림 2. 원자료 3,652건 → 본문 코퍼스 361건(9.9%). 관련성 유지본 479·엄격 확정본 451건 경유.")
 
 # ---------------- RIGHT COLUMN ----------------
 gi = ("본문 코퍼스 361건의 경험 극성은 부정 117·혼합 91·긍정 126·중립 27건이다. 정식 표본에서 과소표집되던 "

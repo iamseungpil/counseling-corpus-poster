@@ -7,6 +7,8 @@
 \setmainfont{NotoSansKR}[Path=../fonts/,
   UprightFont=NotoSansKR-Regular.otf,BoldFont=NotoSansKR-Bold.otf]
 \usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,arrows.meta,positioning}
 \usepackage[absolute,overlay]{textpos}
 \usepackage{eso-pic}
 \usepackage{xcolor}
@@ -20,6 +22,8 @@
 \setlength{\TPVertModule}{1mm}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{4pt}
+\tolerance=2500
+\emergencystretch=3em
 \pagestyle{empty}
 
 \definecolor{kcanavy}{RGB}{20,40,90}
@@ -30,6 +34,15 @@
 \newcommand{\bodyfs}{\fontsize{28}{37}\selectfont}
 \newcommand{\subhd}[1]{{\fontsize{31}{40}\selectfont\bfseries #1}\par\vspace{1.5mm}}
 \newcommand{\figcap}[1]{\par\vspace{1mm}{\fontsize{18}{22}\selectfont\textit{#1}}\par\vspace{2mm}}
+
+% compact pipeline styles (4-layer refinement flow)
+\tikzset{
+  pipe/.style={rectangle, rounded corners, minimum height=15mm, text width=150mm,
+    align=center, draw=kcanavy, line width=0.8pt, fill=kcanavy!7,
+    font=\fontsize{16}{19}\selectfont, inner sep=3mm},
+  pipehi/.style={pipe, fill=orange!20},
+  parr/.style={-{Stealth[length=4mm]}, line width=1.1pt, draw=kcanavy},
+}
 
 \begin{document}
 
@@ -73,12 +86,26 @@
 \end{textblock}
 
 % III. 연구방법
-\begin{textblock}{345}(50,936)
-  \fontsize{29}{38}\selectfont\justifying
-  자료는 X 공개 한국어 글에서 모았고, 사용자명과 외부 식별자는 수집 단계에서 자동으로 가렸다. 질의는 \textbf{정밀$\cdot$확장$\cdot$맥락 점검$\cdot$누적 확장}의 네 층으로 설계했으며, 회수된 게시물은 2010년 9월부터 2026년 4월까지 약 15년 7개월에 걸쳐 있다. 정제는 \textbf{사전 오염 제거$\cdot$규칙 분류$\cdot$LLM 판정$\cdot$보수적 확정}의 네 층을 거쳐 원자료 \textbf{3{,}652건}을 관련성 유지본 479건, 엄격 확정본 451건, 본문 코퍼스 \textbf{361건}으로 좁혔다. 분석 틀은 작업동맹 세 축의 이론 고정층과 여섯 과정 코드의 탐색 고정층, 두 층으로 짰다. 결과의 안정성은 관련성 유지본 479건의 부트스트랩 재표집과 상위 질의군을 하나씩 빼는 제외 점검으로 확인했다.
-
-  \vspace{1mm}\begin{center}\includegraphics[width=250mm]{../figures/corpus_funnel.pdf}\end{center}
-  \vspace{-1mm}{\fontsize{20}{25}\selectfont\textit{그림 1.} 원자료 3{,}652건이 본문 코퍼스 361건(원자료의 9.9\%)으로 좁혀지는 4층 정제 절차.}
+\begin{textblock}{345}(50,932)
+  \fontsize{28}{37}\selectfont\justifying
+  자료는 X 공개 한국어 글에서 모았다(사용자명$\cdot$외부 식별자 자동 비식별). 질의는 \textbf{정밀$\cdot$확장$\cdot$맥락 점검$\cdot$누적 확장}의 네 층으로 설계했고, 회수 게시물은 2010년 9월$\sim$2026년 4월(약 15년 7개월)에 걸쳐 있다. 아래 \textbf{LLM 보조 4층 정제 절차}로 원자료를 좁혀 본문 코퍼스를 확정했다.
+  \par\vspace{3mm}
+  \begin{minipage}[t]{166mm}
+    \centering\vspace{0pt}
+    \begin{tikzpicture}[node distance=5mm]
+      \node[pipe](a){\textbf{① 사전 오염 제거}\\[0.2ex]{\fontsize{14}{17}\selectfont 광고$\cdot$기관 홍보$\cdot$봇$\cdot$비심리 상담 제거}};
+      \node[pipe,below=of a](b){\textbf{② 규칙 기반 1차 분류}\\[0.2ex]{\fontsize{14}{17}\selectfont 자기/가족 주어 $+$ 상담 동사 $+$ 정신건강 어휘 $\rightarrow$ 유지/제외/검토}};
+      \node[pipehi,below=of b](c){\textbf{③ LLM 판정}\\[0.2ex]{\fontsize{14}{17}\selectfont 실제 경험 여부$\cdot$시점$\cdot$장면$\cdot$평가 방향$\cdot$신뢰도 산출}};
+      \node[pipe,below=of c](d){\textbf{④ 보수적 본문 확정}\\[0.2ex]{\fontsize{14}{17}\selectfont 정신과$\cdot$강한 약물$\cdot$관찰자 시점 제외}};
+      \draw[parr](a)--(b);\draw[parr](b)--(c);\draw[parr](c)--(d);
+    \end{tikzpicture}
+    \par\vspace{1mm}{\fontsize{17}{21}\selectfont\textit{그림 1.} LLM 보조 4층 정제 절차.}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{172mm}
+    \centering\vspace{0pt}
+    \includegraphics[width=172mm]{../figures/corpus_funnel.pdf}
+    \par\vspace{1mm}{\fontsize{17}{21}\selectfont\textit{그림 2.} 원자료 3{,}652건 $\rightarrow$ 본문 코퍼스 361건(9.9\%). 관련성 유지본 479$\cdot$엄격 확정본 451건 경유.}
+  \end{minipage}
 \end{textblock}
 
 % ===================== RIGHT COLUMN =====================
@@ -88,7 +115,7 @@
   \subhd{기초 분포}
   본문 코퍼스 361건의 경험 극성은 부정 117$\cdot$혼합 91$\cdot$긍정 126$\cdot$중립 27건이다. 정식 표본에서 과소표집되던 부정 경험이 긍정과 엇비슷한 규모로 함께 들어왔다. 장면은 일반 정신건강 상담 268건과 청소년 학교상담 93건(약 26\%)으로 갈렸다.
   \begin{center}\includegraphics[width=332mm]{../figures/corpus_overview.pdf}\end{center}
-  \figcap{그림 2. 본문 코퍼스 361건의 경험 극성$\cdot$장면$\cdot$상위 질의군 분포.}
+  \figcap{그림 3. 본문 코퍼스 361건의 경험 극성$\cdot$장면$\cdot$상위 질의군 분포.}
 
   \subhd{면접 기반 선행 연구와의 비교}
   부정 117건에서 관찰된 사건 표지를 문보경$\cdot$장성숙(2001)의 면접 범주와 나란히 놓았다. 면접 자료에서 사건 단위로 정리된 부정 경험의 표지가 익명 환경의 글에서도 적용 가능한 형태로 드러난다.
@@ -110,7 +137,7 @@
   \subhd{과정 코드의 극성별 대비}
   작업동맹 세 축은 극성에 따라 갈렸다. 부정 117건에서는 유대 63.2\%$\cdot$과제 69.2\%$\cdot$목표 59.0\%가 부정 정렬, 긍정 126건에서는 유대 80.2\%$\cdot$과제 81.7\%$\cdot$목표 84.9\%가 긍정 정렬이었다. 여섯 과정 코드의 부트스트랩 대비는 신뢰구간이 모두 0을 가로지르지 않았다(예: 무시당함 $-0.431$ [$-0.506$, $-0.350$], 안도 $+0.434$ [$0.344$, $0.517$]).
   \begin{center}\includegraphics[width=332mm]{../figures/process_contrast.pdf}\end{center}
-  \figcap{그림 3. 부정 경험(n=117)과 긍정 경험(n=126)의 과정 코드 대비.}
+  \figcap{그림 4. 부정 경험(n=117)과 긍정 경험(n=126)의 과정 코드 대비.}
 \end{textblock}
 
 % V. 논의
