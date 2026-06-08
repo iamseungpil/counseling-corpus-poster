@@ -23,10 +23,11 @@
 \pagestyle{empty}
 
 \definecolor{kcanavy}{RGB}{20,40,90}
+\definecolor{txt}{HTML}{2C2C2C}   % 템플릿 본문 색
 
-\newcommand{\titlefs}{\fontsize{78}{86}\selectfont}
-\newcommand{\authorfs}{\fontsize{34}{40}\selectfont}
-\newcommand{\bodyfs}{\fontsize{25}{33}\selectfont}
+\newcommand{\titlefs}{\fontsize{80}{90}\selectfont}
+\newcommand{\authorfs}{\fontsize{46}{54}\selectfont\bfseries}
+\newcommand{\bodyfs}{\fontsize{28}{37}\selectfont}
 \newcommand{\subhd}[1]{{\bodyfs\bfseries #1}\par\vspace{1.5mm}}
 \newcommand{\figcap}[1]{\par\vspace{1mm}{\fontsize{18}{22}\selectfont\textit{#1}}\par\vspace{2mm}}
 
@@ -36,6 +37,7 @@
 \AddToShipoutPictureBG*{%
   \put(0,0){\includegraphics[width=\paperwidth,height=\paperheight]{assets/template_bg.png}}%
 }
+\color{txt}% 템플릿 본문 색(2C2C2C)
 
 % ===================== TITLE / AUTHOR =====================
 \begin{textblock}{701}(70,58)
