@@ -35,13 +35,13 @@
 \newcommand{\subhd}[1]{{\fontsize{31}{40}\selectfont\bfseries #1}\par\vspace{1.5mm}}
 \newcommand{\figcap}[1]{\par\vspace{1mm}{\fontsize{18}{22}\selectfont\textit{#1}}\par\vspace{2mm}}
 
-% compact pipeline styles (4-layer refinement flow)
+% pipeline styles (4-layer refinement flow, full column width)
 \tikzset{
-  pipe/.style={rectangle, rounded corners, minimum height=15mm, text width=150mm,
-    align=center, draw=kcanavy, line width=0.8pt, fill=kcanavy!7,
-    font=\fontsize{16}{19}\selectfont, inner sep=3mm},
+  pipe/.style={rectangle, rounded corners, minimum height=17mm, text width=300mm,
+    align=center, draw=kcanavy, line width=0.9pt, fill=kcanavy!7,
+    font=\fontsize{19}{23}\selectfont, inner sep=3.5mm},
   pipehi/.style={pipe, fill=orange!20},
-  parr/.style={-{Stealth[length=4mm]}, line width=1.1pt, draw=kcanavy},
+  parr/.style={-{Stealth[length=5mm]}, line width=1.2pt, draw=kcanavy},
 }
 
 \begin{document}
@@ -64,13 +64,13 @@
 % ===================== LEFT COLUMN =====================
 % I. 서론 > 1. 연구의 필요성
 \begin{textblock}{345}(50,250)
-  \fontsize{34}{45}\selectfont\justifying
+  \fontsize{28}{37}\selectfont\justifying
   상담 경험 연구는 부정 경험을 충분히 담아내지 못해 왔다. 그 누락은 부정 경험을 가진 사람이 면접 표본에 들어오지 않는 \textbf{모집단 차원}보다, 같은 사람이라도 면접 환경에서는 그 경험을 보고하지 않는 \textbf{보고 환경 차원}에서 강하게 일어난다(Mohr, 1995; Krumpal, 2013; 문보경$\cdot$장성숙, 2001). 부정 경험을 가진 내담자일수록 추적 면접에 잘 응하지 않고, 대면 맥락에서는 사회적 바람직성 편향이 작용하기 때문이다. 면접의 한계가 보고 환경에서 비롯된 것이라면, 환경을 바꿀 때 같은 경험이 다른 형태로 기록될 수 있다. 익명을 전제로 자기 경험을 적는 SNS 글이 그 사례다. Steinbrenner 외(2025)는 독일어권 온라인 포럼에서 부정적 심리치료 경험의 주제 구조를 추출해, 공개 텍스트가 분포 수준의 자료원이 됨을 보였다. 그러나 한국어 회고 표현과 상담 문화의 특수성 때문에 영어$\cdot$독일어권 결과를 그대로 옮기기 어렵고, 한국어 자료를 직접 분석한 연구는 아직 드물다.
 \end{textblock}
 
 % I. 서론 > 2. 연구목표
-\begin{textblock}{345}(52,512)
-  \fontsize{32}{44}\selectfont\justifying
+\begin{textblock}{345}(52,455)
+  \fontsize{28}{40}\selectfont\justifying
   \begin{itemize}
     \item \textbf{목적 1.} 한국어 공개 SNS 상담 경험 자료에 적용할 \textbf{LLM 보조 정제 절차}를 정리하고, 본문 코퍼스를 구성한다.
     \item \textbf{목적 2.} 본문 코퍼스의 \textbf{경험 극성과 사건 언어 양상}을 분포 수준에서 기술하고, 면접 기반 선행 연구와 비교한다.
@@ -78,34 +78,31 @@
 \end{textblock}
 
 % II. 이론적 배경
-\begin{textblock}{345}(50,688)
-  \fontsize{30}{40}\selectfont\justifying
+\begin{textblock}{345}(50,565)
+  \fontsize{27}{36}\selectfont\justifying
   본 연구의 분석 틀은 두 층으로 이루어진다. \textbf{이론 고정층}은 작업동맹이다. Bordin(1979)은 작업동맹을 유대$\cdot$과제$\cdot$목표 세 축의 협력으로 보았다. 유대는 상담자와 내담자의 정서적 결속, 과제는 회기에서 합의해 수행하는 활동, 목표는 함께 이루려는 변화를 가리킨다. 이 세 축은 짧은 회고문에서도 부정 경험과 긍정 경험을 다른 종류의 사건으로 구분하게 해 준다.
 
   \textbf{탐색 고정층}은 부정 경험 사건 언어에서 끌어왔다. Mohr(1995)는 부정적 성과를 식별 가능한 사건 단위로 분리해 보고할 것을 권고했고, 문보경$\cdot$장성숙(2001)은 내담자 불만을 ``원치 않는 반응'', ``상담자의 요구'', ``상처 경험'' 등으로 범주화했다. 본 연구는 이 사건 언어를 살려 여섯 과정 코드를 두었다. 부정 쪽은 강제성$\cdot$무시당함$\cdot$상처, 긍정 쪽은 이해받음$\cdot$안도$\cdot$성장이다. 각 코드는 글마다 등장 여부를 이진값으로 본다.
 \end{textblock}
 
 % III. 연구방법
-\begin{textblock}{345}(50,932)
-  \fontsize{28}{37}\selectfont\justifying
-  자료는 X 공개 한국어 글에서 모았다(사용자명$\cdot$외부 식별자 자동 비식별). 질의는 \textbf{정밀$\cdot$확장$\cdot$맥락 점검$\cdot$누적 확장}의 네 층으로 설계했고, 회수 게시물은 2010년 9월$\sim$2026년 4월(약 15년 7개월)에 걸쳐 있다. 아래 \textbf{LLM 보조 4층 정제 절차}로 원자료를 좁혀 본문 코퍼스를 확정했다.
+\begin{textblock}{345}(50,778)
+  \fontsize{26}{35}\selectfont\justifying
+  자료는 X 공개 한국어 글에서 모았다(사용자명$\cdot$외부 식별자 자동 비식별). 질의는 \textbf{정밀$\cdot$확장$\cdot$맥락 점검$\cdot$누적 확장}의 네 층으로 설계했고, 회수 게시물은 2010년 9월$\sim$2026년 4월(약 15년 7개월)에 걸쳐 있다.
   \par\vspace{3mm}
-  \begin{minipage}[t]{166mm}
-    \centering\vspace{0pt}
-    \begin{tikzpicture}[node distance=5mm]
-      \node[pipe](a){\textbf{① 사전 오염 제거}\\[0.2ex]{\fontsize{14}{17}\selectfont 광고$\cdot$기관 홍보$\cdot$봇$\cdot$비심리 상담 제거}};
-      \node[pipe,below=of a](b){\textbf{② 규칙 기반 1차 분류}\\[0.2ex]{\fontsize{14}{17}\selectfont 자기/가족 주어 $+$ 상담 동사 $+$ 정신건강 어휘 $\rightarrow$ 유지/제외/검토}};
-      \node[pipehi,below=of b](c){\textbf{③ LLM 판정}\\[0.2ex]{\fontsize{14}{17}\selectfont 실제 경험 여부$\cdot$시점$\cdot$장면$\cdot$평가 방향$\cdot$신뢰도 산출}};
-      \node[pipe,below=of c](d){\textbf{④ 보수적 본문 확정}\\[0.2ex]{\fontsize{14}{17}\selectfont 정신과$\cdot$강한 약물$\cdot$관찰자 시점 제외}};
-      \draw[parr](a)--(b);\draw[parr](b)--(c);\draw[parr](c)--(d);
-    \end{tikzpicture}
-    \par\vspace{1mm}{\fontsize{17}{21}\selectfont\textit{그림 1.} LLM 보조 4층 정제 절차.}
-  \end{minipage}\hfill
-  \begin{minipage}[t]{172mm}
-    \centering\vspace{0pt}
-    \includegraphics[width=172mm]{../figures/corpus_funnel.pdf}
-    \par\vspace{1mm}{\fontsize{17}{21}\selectfont\textit{그림 2.} 원자료 3{,}652건 $\rightarrow$ 본문 코퍼스 361건(9.9\%). 관련성 유지본 479$\cdot$엄격 확정본 451건 경유.}
-  \end{minipage}
+  \begin{center}
+  \begin{tikzpicture}[node distance=5mm]
+    \node[pipe](a){\textbf{① 사전 오염 제거}\\[0.3ex]{\fontsize{17}{21}\selectfont 광고$\cdot$기관 홍보$\cdot$봇$\cdot$비심리 상담(법률$\cdot$입시$\cdot$성형) 제거}};
+    \node[pipe,below=of a](b){\textbf{② 규칙 기반 1차 분류}\\[0.3ex]{\fontsize{17}{21}\selectfont 자기/가족 주어 $+$ 상담 동사 $+$ 정신건강 어휘 $\rightarrow$ 유지/제외/검토}};
+    \node[pipehi,below=of b](c){\textbf{③ LLM 판정}\\[0.3ex]{\fontsize{17}{21}\selectfont 검토 사례의 실제 경험 여부$\cdot$시점$\cdot$장면$\cdot$평가 방향$\cdot$신뢰도 산출}};
+    \node[pipe,below=of c](d){\textbf{④ 보수적 본문 확정}\\[0.3ex]{\fontsize{17}{21}\selectfont 정신과$\cdot$강한 약물$\cdot$관찰자 시점 제외 $\rightarrow$ 글쓴이 본인 경험으로 한정}};
+    \draw[parr](a)--(b);\draw[parr](b)--(c);\draw[parr](c)--(d);
+  \end{tikzpicture}
+  \end{center}
+  \vspace{0mm}{\fontsize{18}{22}\selectfont\textit{그림 1.} LLM 보조 4층 정제 절차. 규칙 분류로 분량을 줄이고 경계 사례에만 LLM 판정(③)을 적용한다.}
+  \par\vspace{3mm}
+  \begin{center}\includegraphics[width=250mm]{../figures/corpus_funnel.pdf}\end{center}
+  \vspace{0mm}{\fontsize{18}{22}\selectfont\textit{그림 2.} 원자료 3{,}652건 $\rightarrow$ 본문 코퍼스 361건(9.9\%). 관련성 유지본 479$\cdot$엄격 확정본 451건 경유.}
 \end{textblock}
 
 % ===================== RIGHT COLUMN =====================
